@@ -5,4 +5,4 @@
 
 原项目来源：https://github.com/WheatBox/GameMakerChatRoom
 
-这个版本这是简单地套了一层GUI而已
+这个版本这是简单地套了一层UI而已
