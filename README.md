@@ -7,4 +7,6 @@
 
 原项目来源：https://github.com/WheatBox/GameMakerChatRoom
 
+懒得编译，直接下载绿色版压缩包：https://www.123865.com/s/fhQ5Vv-Mvvqv
+
 这个版本这是简单地套了一层UI而已,所以完全可以和原来的旧版本互通 ^o^
