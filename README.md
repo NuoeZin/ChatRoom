@@ -25,7 +25,6 @@
 本项目基于以下项目进行修改：
 
 - 原项目：[WheatBox/GameMakerChatRoom](https://github.com/WheatBox/GameMakerChatRoom)
-- 本项目：[NuoeZin/ChatRoom](https://github.com/NuoeZin/ChatRoom)
 
 本版本主要是对原项目进行 UI 层面的重新制作，并保留原有的通信方式，因此新旧版本之间可以互相连接。
 
