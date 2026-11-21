@@ -1,11 +1,12 @@
 # ChatRoom
 
-![Uploading ChatRoom_Main.png…]()
-
-
 一个基于 [GameMakerChatRoom](https://github.com/WheatBox/GameMakerChatRoom) 修改的简易聊天室项目。
 
 本项目主要是在原项目的基础上重新制作了一层 UI，核心通信部分并没有进行大幅修改，因此**可以与原来的旧版本互通**。^o^
+
+<p align="center">
+  <img src="ChatRoom_Main.png" alt="ChatRoom 主界面" width="640">
+</p>
 
 ## 使用说明
 
