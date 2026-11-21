@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"embedded_pinyin",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"embedded_pinyin",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

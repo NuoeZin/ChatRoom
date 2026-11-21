@@ -1,0 +1,8 @@
+{
+  "FolderOrderSettings":[],
+  "ResourceOrderSettings":[
+    {"name":"RoomUI","order":1,"path":"roomui/RoomUI/RoomUI.yy",},
+    {"name":"draw_simple_rounded_rect","order":1,"path":"scripts/draw_simple_rounded_rect/draw_simple_rounded_rect.yy",},
+    {"name":"string_limit","order":2,"path":"scripts/string_limit/string_limit.yy",},
+  ],
+}

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"embedded_my_drink",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"embedded_my_drink",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
