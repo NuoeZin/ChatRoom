@@ -1,0 +1,15 @@
+services:
+  chatroom:
+    build: .
+    image: chatroom-server:latest
+    container_name: chatroom-server
+    restart: unless-stopped
+    init: true
+    ports:
+      - "6510:6510/tcp"
+      - "6511:6511/udp"
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

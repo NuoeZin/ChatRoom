@@ -24,7 +24,7 @@ if (!has_null) exit;
 buffer_seek(buff, buffer_seek_start, 0);
 var name = buffer_read(buff, buffer_string);
 if (!is_string(name) || name == "") exit;
-if (string_copy(name, 0, 6) != "&sern=") exit;
+if (!string_starts_with(name, "&sern=")) exit;
 
 var ip = map[? "ip"];
 var payload = string_copy(name, 7, string_length(name) - 6);

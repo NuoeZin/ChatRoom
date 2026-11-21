@@ -25,11 +25,25 @@ if(type == network_type_data) {
 
 	getmes = buffer_read(buf,buffer_string);
 	var send_this = true;
+	var send_count = false;
+	// network_type_data 使用 "id"；connect/disconnect 才使用 "socket"
+	var csock = ds_map_find_value(map,"id");
 
-	if(string_copy(getmes,0,6) == "&name=") {
+	if (getmes == "") {
+		// 空帧只可能是协议填充，不能广播成空聊天行
+		send_this = false;
+	} else if(string_starts_with(getmes, "&ping=")) {
+		// 只向发送心跳的客户端回复，不能让 &ping= 进入公共聊天
+		var pong = "&pong=" + string_copy(getmes, 7, string_length(getmes) - 6);
+		var pong_size = string_byte_length(pong) + 1;
+		var pong_buf = buffer_create(pong_size, buffer_fixed, 1);
+		buffer_write(pong_buf, buffer_string, pong);
+		network_send_raw(csock, pong_buf, pong_size);
+		buffer_delete(pong_buf);
+		send_this = false;
+	} else if(string_starts_with(getmes, "&name=")) {
 		// 昵称去掉首尾空白；空昵称直接忽略，不加入成员列表也不广播
 		var gotname = string_trim(string_copy(getmes, 7, string_length(getmes) - 6));
-		var csock = ds_map_find_value(map,"socket");
 		var idx = ds_list_find_index(socket_list, csock);
 
 		if (gotname == "" || idx < 0 || name_list[| idx] != "") {
@@ -45,6 +59,7 @@ if(type == network_type_data) {
 			ds_list_delete(name_list, idx);
 			ds_list_insert(name_list, idx, gotname);
 			sendmes = "&coly=" + gotname + "已加入";
+			send_count = true;
 		}
 	} else {
 		sendmes = getmes;
@@ -57,6 +72,15 @@ if(type == network_type_data) {
 			network_send_raw(socket_list[| i],buf,buffer_get_size(buf));
 			buffer_delete(buf);
 		}
+	}
+
+	if (send_count) {
+		var count_text = "&count=" + string(ds_list_size(socket_list));
+		var count_size = string_byte_length(count_text) + 1;
+		var count_buf = buffer_create(count_size, buffer_fixed, 1);
+		buffer_write(count_buf, buffer_string, count_text);
+		network_send_raw(csock, count_buf, count_size);
+		buffer_delete(count_buf);
 	}
 }
 

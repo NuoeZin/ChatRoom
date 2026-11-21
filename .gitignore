@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# Compiled Java classes
+RoomServer/java/*.class
+
+# Bundled Windows Java runtime
+RoomServer/Runtime/
+
+# Local editor/build output
+options.ini
+.gm_build_cache/
+.gm_build_temp/
+*.yyz

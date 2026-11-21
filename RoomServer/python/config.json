@@ -1,0 +1,7 @@
+{
+  "room_name": "Huimer",
+  "port": 6510,
+  "broadcast_port": 6511,
+  "interval": 1.0,
+  "max_users": 0
+}

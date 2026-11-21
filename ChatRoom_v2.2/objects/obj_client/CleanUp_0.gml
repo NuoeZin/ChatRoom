@@ -11,6 +11,16 @@ if (ds_exists(Talkstr_list, ds_type_list)) {
     Talkstr_list = noone;
 }
 
+if (recv_buffer != noone && buffer_exists(recv_buffer)) {
+    buffer_delete(recv_buffer);
+    recv_buffer = noone;
+}
+
+if (recv_temp != noone && buffer_exists(recv_temp)) {
+    buffer_delete(recv_temp);
+    recv_temp = noone;
+}
+
 if (instance_exists(textbox_1)) {
     instance_destroy(textbox_1);
     textbox_1 = noone;

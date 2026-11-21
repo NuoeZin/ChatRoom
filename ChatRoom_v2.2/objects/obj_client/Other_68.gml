@@ -10,31 +10,61 @@ if(type == network_type_data) {
     if (!is_undefined(buf) && buffer_exists(buf)) {
         var _size = buffer_get_size(buf);
         if (_size <= 0) exit;
-        if (buffer_peek(buf, _size - 1, buffer_u8) != 0) exit;
 
-        getmes = buffer_read(buf, buffer_string);
-        
-        // 估算当前在线人数（服务端加入/离开通知）
-        if (string_copy(getmes, 0, 6) == "&coly=") {
-            if (string_pos("已加入", getmes) > 0) {
-                online_count++;
-            } else if (string_pos("已离开", getmes) > 0) {
-                online_count = max(0, online_count - 1);
-            }
+        if (recv_buffer == noone || !buffer_exists(recv_buffer)) {
+            recv_buffer = buffer_create(20000, buffer_fixed, 1);
+            recv_temp = buffer_create(20000, buffer_fixed, 1);
+            recv_start = 0;
+            recv_end = 0;
         }
 
-        // 检查Talkstr_list是否存在
-        if (ds_exists(Talkstr_list, ds_type_list)) {
-            if(string_copy(getmes, 0, 6) != "&sern=") {
-                ds_list_add(Talkstr_list, getmes);
-                if(ds_list_size(Talkstr_list) > 20) {
-                    ds_list_delete(Talkstr_list, 0);
+        var required = recv_end + _size;
+        if (required > buffer_get_size(recv_buffer)) {
+            var new_size = buffer_get_size(recv_buffer);
+            while (new_size < required) new_size *= 2;
+            buffer_resize(recv_buffer, new_size);
+            buffer_resize(recv_temp, new_size);
+        }
+
+        buffer_copy(buf, 0, _size, recv_buffer, recv_end);
+        recv_end += _size;
+
+        // TCP 是字节流：一次事件可能包含半条、一条或多条消息
+        while (recv_start < recv_end) {
+            var nul_at = -1;
+            for (var scan = recv_start; scan < recv_end; scan++) {
+                if (buffer_peek(recv_buffer, scan, buffer_u8) == 0) {
+                    nul_at = scan;
+                    break;
                 }
             }
-        } else {
-            // 如果列表不存在，重新创建（安全措施）
-            Talkstr_list = ds_list_create();
+
+            if (nul_at < 0) break;
+            if (nul_at == recv_start) {
+                recv_start++;
+                continue;
+            }
+
+            buffer_seek(recv_buffer, buffer_seek_start, recv_start);
+            getmes = buffer_read(recv_buffer, buffer_string);
+            recv_start = nul_at + 1;
+            process_server_message(getmes);
+
+            // 跳过定长帧尾部的 NUL 填充
+            while (recv_start < recv_end &&
+                   buffer_peek(recv_buffer, recv_start, buffer_u8) == 0) {
+                recv_start++;
+            }
         }
+
+        // 把尚未组成完整消息的尾部移回缓冲区开头
+        var remaining = recv_end - recv_start;
+        if (remaining > 0 && recv_start > 0) {
+            buffer_copy(recv_buffer, recv_start, remaining, recv_temp, 0);
+            buffer_copy(recv_temp, 0, remaining, recv_buffer, 0);
+        }
+        recv_start = 0;
+        recv_end = remaining;
     }
 }
 
@@ -42,6 +72,8 @@ if(type == network_type_data) {
 if(type == network_type_disconnect) {
     // 已经由返回按钮 / 取消弹窗主动断开，避免重复提示
     if (socket == noone) exit;
+
+    server_alive = false;
 
     // 服务器断开连接
     if (socket != noone) {

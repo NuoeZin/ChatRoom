@@ -68,7 +68,7 @@ if (ds_exists(Talkstr_list, ds_type_list)) {
         // 默认消息颜色为白色
         var message_color = c_white;
         
-        if(string_copy(message, 0, 6) == "&coly=") {
+        if(string_starts_with(message, "&coly=")) {
             // 系统消息（黄色）
             message_color = c_yellow;
             skiptext = 6;
@@ -326,7 +326,7 @@ if (info_active) {
         "服务器地址: " + info_server,
         "当前在线: " + string(max(1, online_count)) + " 人",
         "我的昵称: " + info_user,
-        "连接状态: 已连接",
+        "连接状态: " + (server_alive ? "已连接" : "服务器无响应，发送已暂停"),
         "已连接时长: " + string_format(connected_min, 2, 0) + "分" + string_format(connected_sec, 2, 0) + "秒"
     ];
 

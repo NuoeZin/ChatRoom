@@ -1,3 +1,13 @@
+// ===== 服务器存活检测 =====
+if (socket != noone) {
+    if (current_time - last_server_response > heartbeat_timeout_ms) {
+        server_alive = false;
+    }
+    if (current_time - last_heartbeat_sent >= heartbeat_interval_ms) {
+        send_heartbeat();
+    }
+}
+
 // ===== 房间信息弹窗 =====
 if (info_active) {
     global.chat_input_blocked = true;
