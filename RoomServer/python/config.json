@@ -1,5 +1,5 @@
 {
-  "room_name": "Huimer",
+  "room_name": "RoomName",
   "port": 6510,
   "broadcast_port": 6511,
   "interval": 1.0,
