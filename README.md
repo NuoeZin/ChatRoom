@@ -8,9 +8,9 @@
   <img src="ChatRoom_Main.png" alt="ChatRoom 主界面" width="640">
 </p>
 
-## Android Studio 原生客户端
+## Android 客户端
 
-仓库内的 [`ChatRoom_of_Android/android-studio`](ChatRoom_of_Android/android-studio) 是使用 Java + Material Design 2.0 重写的 Android 原生客户端，与 Windows / GameMaker 版本共用 `6510/TCP`、`6511/UDP` 协议，可以直接互相发现和聊天。
+仓库内的 [`ChatRoom_of_Android/android-studio`](ChatRoom_of_Android/android-studio) 是使用 Java 重写的 Android 原生客户端，与 Windows / GameMaker 版本共用 `6510/TCP`、`6511/UDP` 协议，可以直接互相发现和聊天。
 
 <p align="center">
   <img src="ChatRoom_of_Android/android-studio/screenshots/main.png" alt="Android 主界面" width="240">
