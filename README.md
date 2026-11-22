@@ -18,12 +18,11 @@
   <img src="ChatRoom_of_Android/android-studio/screenshots/chat.png" alt="Android 聊天界面" width="240">
 </p>
 
-- Release APK 约 4.7 MB，明显小于 GameMaker Android 版本
 - 支持创建房间、UDP 自动发现、手动 IP 连接和房主直接进入聊天室
 - 房间主页包含“房间信息 / 房间成员”两个选项卡
 - 聊天界面使用与 Windows 版一致的纯文本左对齐样式
 - 中文、日文、英文使用内置 Minecraft 字体，其他语言文字使用系统字体
-- 输入框禁止 Emoji
+- 输入框禁用了 Emoji
 - UDP 广播被路由器或模拟器 NAT 拦截时，会自动通过 TCP `6510` 探测局域网房间
 
 ### 构建 Android 客户端
