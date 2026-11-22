@@ -1,6 +1,6 @@
 # ChatRoom
 
-一个基于 [GameMakerChatRoom](https://github.com/WheatBox/GameMakerChatRoom) 修改的简易聊天室项目
+一个使用 GameMaker 打造的简易聊天室项目
 
 本项目主要是在原项目的基础上重新制作了一层 UI，核心通信部分有进行大幅修改，因此现在**可能与原来的旧版本不再互通**
 
