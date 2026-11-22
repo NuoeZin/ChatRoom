@@ -10,7 +10,7 @@
 
 ## Android 客户端
 
-仓库内的 [`ChatRoom_of_Android/android-studio`](ChatRoom_of_Android/android-studio) 是使用 Java 重写的 Android 原生客户端，与 Windows / GameMaker 版本共用 `6510/TCP`、`6511/UDP` 协议，可以直接互相发现和聊天。
+仓库内的 [`ChatRoom_of_Android/android-studio`](ChatRoom_of_Android/android-studio) 是使用 Java 重写的 Android 原生客户端，与 Windows / GameMaker 版本共用 `6510/TCP`、`6511/UDP` 协议，可以直接互相发现和聊天
 
 <p align="center">
   <img src="ChatRoom_of_Android/android-studio/screenshots/main.png" alt="Android 主界面" width="240">
@@ -72,3 +72,7 @@ gradlew.bat assembleRelease
 这个版本并不是对原项目进行完全重写，主要工作是重新设计和套用 UI
 
 感谢原作者以及相关教程作者提供的项目与代码参考
+
+## 免责声明
+
+**本项目仅供学习、交流和技术研究使用，请勿用于任何商业用途或非法用途。使用本项目所产生的任何直接或间接后果（包括但不限于数据丢失、通信故障、网络安全问题、法律责任等）均由使用者自行承担，项目作者及贡献者不承担任何责任。请在遵守当地法律法规及网络通信相关规定的前提下使用本项目。如你继续使用、修改或分发本项目，即视为你已阅读并同意本免责声明**
