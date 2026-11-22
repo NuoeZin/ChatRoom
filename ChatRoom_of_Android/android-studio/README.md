@@ -2,10 +2,6 @@
 
 Material Design 2.0 原生 Android 客户端，使用 Java + Material Components 实现。
 
-## 为什么要做原生版
-
-GameMaker Android 版本已经可用，但包含运行时和额外引擎组件，Release APK 约 41 MB。原生版保留原版 Minecraft 字体和内置图片，Release APK 约 4.7 MB。
-
 ## 界面预览
 
 <p align="center">
