@@ -1,6 +1,6 @@
-# ChatRoom Android Studio
+# ChatRoom Android
 
-Material Design 2.0 原生 Android 客户端，使用 Java + Material Components 实现。
+原生 Android 客户端，使用 Java 实现。
 
 ## 界面预览
 
