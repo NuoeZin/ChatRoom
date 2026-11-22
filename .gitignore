@@ -12,4 +12,19 @@ RoomServer/Runtime/
 options.ini
 .gm_build_cache/
 .gm_build_temp/
+.gm_build_user/
+output/
 *.yyz
+
+# Local verification artifacts
+ChatRoom_of_Android/build/screen-*.png
+ChatRoom_of_Android/build/*.log
+ChatRoom_of_Android/build/test_*.py
+ChatRoom_of_Android/build/
+ChatRoom_of_Android/android-studio/.gradle/
+ChatRoom_of_Android/android-studio/.signing/
+ChatRoom_of_Android/android-studio/keystore.properties
+ChatRoom_of_Android/android-studio/local.properties
+ChatRoom_of_Android/android-studio/app/build/
+ChatRoom_of_Android/android-studio/build/
+ChatRoom_of_Android/android-studio/*.iml

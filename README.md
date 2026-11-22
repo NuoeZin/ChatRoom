@@ -8,7 +8,34 @@
   <img src="ChatRoom_Main.png" alt="ChatRoom 主界面" width="640">
 </p>
 
-## 使用说明
+## Android Studio 原生客户端
+
+仓库内的 [`ChatRoom_of_Android/android-studio`](ChatRoom_of_Android/android-studio) 是使用 Java + Material Design 2.0 重写的 Android 原生客户端，与 Windows / GameMaker 版本共用 `6510/TCP`、`6511/UDP` 协议，可以直接互相发现和聊天。
+
+<p align="center">
+  <img src="ChatRoom_of_Android/android-studio/screenshots/main.png" alt="Android 主界面" width="240">
+  <img src="ChatRoom_of_Android/android-studio/screenshots/host.png" alt="Android 房间信息" width="240">
+  <img src="ChatRoom_of_Android/android-studio/screenshots/chat.png" alt="Android 聊天界面" width="240">
+</p>
+
+- Release APK 约 4.7 MB，明显小于 GameMaker Android 版本
+- 支持创建房间、UDP 自动发现、手动 IP 连接和房主直接进入聊天室
+- 房间主页包含“房间信息 / 房间成员”两个选项卡
+- 聊天界面使用与 Windows 版一致的纯文本左对齐样式
+- 中文、日文、英文使用内置 Minecraft 字体，其他语言文字使用系统字体
+- 输入框禁止 Emoji
+- UDP 广播被路由器或模拟器 NAT 拦截时，会自动通过 TCP `6510` 探测局域网房间
+
+### 构建 Android 客户端
+
+```bat
+cd ChatRoom_of_Android\android-studio
+gradlew.bat assembleRelease
+```
+
+输出位于 `ChatRoom_of_Android/android-studio/app/build/outputs/apk/release/app-release.apk`。仓库不包含签名文件和构建产物，签名配置请参考 [Android Studio README](ChatRoom_of_Android/android-studio/README.md)。
+
+## Windows / GameMaker 客户端使用说明
 
 如果创建了聊天室的主机端也想加入自己创建的聊天室，需要：
 

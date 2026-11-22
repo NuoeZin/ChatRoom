@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="brand_blue">#4682B4</color>
+    <color name="brand_blue_dark">#2C5884</color>
+    <color name="brand_blue_light">#76B4E4</color>
+    <color name="navy">#161E2E</color>
+    <color name="navy_soft">#1F2B41</color>
+    <color name="navy_card">#1C2534</color>
+    <color name="window_background">#D7E6F4</color>
+    <color name="text_primary">#253347</color>
+    <color name="text_secondary">#49617D</color>
+    <color name="text_on_dark">#EEF4FF</color>
+    <color name="text_muted_dark">#ACBCD4</color>
+    <color name="green">#66DC9A</color>
+    <color name="green_dark">#204A3A</color>
+    <color name="amber">#F4D388</color>
+    <color name="amber_dark">#302E27</color>
+    <color name="danger">#DE6870</color>
+    <color name="danger_dark">#9A404C</color>
+    <color name="dirty_blue">#556A70</color>
+    <color name="dirty_red">#755755</color>
+    <color name="dirty_button_text">#EDF2F0</color>
+    <color name="stroke_dark">#677A92</color>
+    <color name="stroke_light">#75566E94</color>
+    <color name="input_background">#121827</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="transparent">#00000000</color>
+    <color name="splash_blue">#C9DDEE</color>
+</resources>

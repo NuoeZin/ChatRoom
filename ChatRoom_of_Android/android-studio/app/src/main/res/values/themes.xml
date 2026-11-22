@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.ChatRoom.Base" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/brand_blue</item>
+        <item name="colorPrimaryVariant">@color/brand_blue_dark</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondary">@color/brand_blue_light</item>
+        <item name="colorSecondaryVariant">@color/brand_blue</item>
+        <item name="colorOnSecondary">@color/navy</item>
+        <item name="colorSurface">@color/white</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        <item name="android:windowBackground">@color/window_background</item>
+        <item name="android:windowActionModeOverlay">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:fontFamily">@font/minecraft</item>
+        <item name="fontFamily">@font/minecraft</item>
+        <item name="materialAlertDialogTheme">@style/ThemeOverlay.ChatRoom.Dialog</item>
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.ChatRoom.Small</item>
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.ChatRoom.Medium</item>
+        <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.ChatRoom.Large</item>
+    </style>
+
+    <style name="Theme.ChatRoom" parent="Theme.ChatRoom.Base" />
+
+    <style name="ThemeOverlay.ChatRoom.Dialog" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearance.ChatRoom.Dialog</item>
+        <item name="android:fontFamily">@font/minecraft</item>
+        <item name="fontFamily">@font/minecraft</item>
+    </style>
+
+    <style name="ShapeAppearance.ChatRoom.Small" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">6dp</item>
+    </style>
+    <style name="ShapeAppearance.ChatRoom.Medium" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">8dp</item>
+    </style>
+    <style name="ShapeAppearance.ChatRoom.Large" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">10dp</item>
+    </style>
+    <style name="ShapeAppearance.ChatRoom.Dialog" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">12dp</item>
+    </style>
+
+    <style name="Widget.ChatRoom.Button.Primary" parent="Widget.MaterialComponents.Button">
+        <item name="android:minHeight">@dimen/button_height</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:letterSpacing">0</item>
+        <item name="android:fontFamily">@font/minecraft</item>
+        <item name="backgroundTint">@color/brand_blue</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="cornerRadius">14dp</item>
+        <item name="elevation">0dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+    </style>
+
+    <style name="Widget.ChatRoom.Button.Secondary" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:minHeight">@dimen/button_height</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:letterSpacing">0</item>
+        <item name="android:fontFamily">@font/minecraft</item>
+        <item name="backgroundTint">@color/navy_soft</item>
+        <item name="android:textColor">@color/text_on_dark</item>
+        <item name="strokeColor">@color/stroke_dark</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="cornerRadius">14dp</item>
+        <item name="elevation">0dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+    </style>
+
+    <style name="Widget.ChatRoom.Button.Ghost" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:minHeight">44dp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:fontFamily">@font/minecraft</item>
+        <item name="android:textColor">@color/text_on_dark</item>
+        <item name="cornerRadius">12dp</item>
+    </style>
+
+    <style name="Widget.ChatRoom.Button.Danger" parent="Widget.MaterialComponents.Button">
+        <item name="android:minHeight">@dimen/button_height</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:letterSpacing">0</item>
+        <item name="android:fontFamily">@font/minecraft</item>
+        <item name="backgroundTint">@color/danger_dark</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="cornerRadius">14dp</item>
+        <item name="elevation">0dp</item>
+    </style>
+
+    <style name="Widget.ChatRoom.Button.HostAction" parent="Widget.MaterialComponents.Button">
+        <item name="android:minWidth">0dp</item>
+        <item name="android:minHeight">@dimen/button_height</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:letterSpacing">0</item>
+        <item name="android:fontFamily">@font/minecraft</item>
+        <item name="android:textColor">@color/dirty_button_text</item>
+        <item name="android:paddingStart">8dp</item>
+        <item name="android:paddingEnd">8dp</item>
+        <item name="cornerRadius">8dp</item>
+        <item name="elevation">0dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+    </style>
+
+    <style name="Widget.ChatRoom.IconButton" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:minWidth">46dp</item>
+        <item name="android:minHeight">46dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:padding">8dp</item>
+        <item name="iconGravity">textStart</item>
+        <item name="iconPadding">0dp</item>
+        <item name="iconTint">@color/text_on_dark</item>
+        <item name="android:fontFamily">@font/minecraft</item>
+        <item name="cornerRadius">13dp</item>
+        <item name="backgroundTint">@color/navy_soft</item>
+    </style>
+
+    <style name="TextAppearance.ChatRoom.Display" parent="TextAppearance.MaterialComponents.Headline3">
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textSize">32sp</item>
+        <item name="android:fontFamily">@font/minecraft</item>
+    </style>
+    <style name="TextAppearance.ChatRoom.Title" parent="TextAppearance.MaterialComponents.Headline5">
+        <item name="android:textColor">@color/text_on_dark</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:fontFamily">@font/minecraft</item>
+    </style>
+    <style name="TextAppearance.ChatRoom.Body" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="android:textColor">@color/text_on_dark</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:fontFamily">@font/minecraft</item>
+    </style>
+    <style name="TextAppearance.ChatRoom.Muted" parent="TextAppearance.MaterialComponents.Body2">
+        <item name="android:textColor">@color/text_muted_dark</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:fontFamily">@font/minecraft</item>
+    </style>
+    <style name="TextAppearance.ChatRoom.Tab" parent="TextAppearance.MaterialComponents.Button">
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/minecraft</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+</resources>
